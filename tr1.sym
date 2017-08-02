@@ -1,0 +1,74 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-006 MAIN.value
+007-008 reg_read.value
+007     write_addr.x
+007     @PRINTF_X_9600_31766_31767.P1
+007     MAIN.@SCRATCH1
+008     @delay_ms1.P1
+008     @PRINTF_X_9600_31766_31767.P2
+009-00A reg_read.value1
+00B-00C reg_read.fvalue
+00D     reg_read.@SCRATCH1
+F7A.6   C2OUT
+F7B.6   C1OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0018  @delay_ms1
+0004  mkhigh
+003E  write_addr
+0084  reg_read
+0126  MAIN
+00E4  @PRINTF_X_9600_31766_31767
+0126  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Rohit\Music\ahoysysprog\pic26k20_tft_lcd\
+
+Project Files:
+    tr1.c
+    D:\PICC\devices\18F26K20.h
+
+Units:
+    C:\Users\Rohit\Music\ahoysysprog\pic26k20_tft_lcd\tr1 (main)
+
+Compiler Settings:
+    Processor:      PIC18F26K20
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      tr1.err
+    Ext Symbols: tr1.esym
+    INHX32:      tr1.hex
+    Symbols:     tr1.sym
+    List:        tr1.lst
+    Debug/COFF:  tr1.cof
+    Project:     tr1.PJT
+    Call Tree:   tr1.tre
+    Statistics:  tr1.sta

@@ -1,0 +1,47 @@
+
+ROM used: 434 (1%)
+          434 (1%) including unused fragments
+
+          1 Average locations per line
+          8 Average locations per statement
+
+RAM used: 7 (0%) at main() level
+          13 (0%) worst case
+
+Stack used: 1 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  100    57 100  tr1.c
+  435     0   0  D:\PICC\devices\18F26K20.h
+----- -----
+  535    57 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   4   1             @delay_ms1
+0     20   2   0    67  1.2  mkhigh
+0     70   8   1   282  1.4  write_addr
+0     96  11   7   402  3.5  reg_read
+0    140  16   3   231  2.6  MAIN
+0     66   8   2             @PRINTF_X_9600_31766_31767
+
+Program metrics:
+    Functions               4
+    Statements              57
+    Comments                111
+    Volume (V)              1349
+    Difficilty (D)          8.7
+    Effort to implement (E) 11686
+    Time to implement (T)   11 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    145
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-0FFFE   430  65102  
+
+
+

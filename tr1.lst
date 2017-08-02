@@ -1,0 +1,299 @@
+CCS PCH C Compiler, Version 4.114, 93460303               02-Aug-17 17:32
+
+               Filename: C:\Users\Rohit\Music\ahoysysprog\pic26k20_tft_lcd\tr1.lst
+
+               ROM used: 434 bytes (1%)
+                         Largest free fragment is 65102
+               RAM used: 7 (0%) at main() level
+                         13 (0%) worst case
+               Stack:    1 locations
+
+*
+00000:  GOTO   0126
+.................... #include <18F26K20.h> 
+.................... //////// Standard Header file for the PIC18F26K20 device //////////////// 
+.................... #device PIC18F26K20 
+.................... #list 
+....................  
+.................... #FUSES HS,NOWDT,NOPUT,NOPROTECT 
+.................... #use delay(internal = 8000000) 
+*
+00018:  CLRF   FEA
+0001A:  MOVLW  08
+0001C:  MOVWF  FE9
+0001E:  MOVF   FEF,W
+00020:  BZ    003C
+00022:  MOVLW  02
+00024:  MOVWF  01
+00026:  CLRF   00
+00028:  DECFSZ 00,F
+0002A:  BRA    0028
+0002C:  DECFSZ 01,F
+0002E:  BRA    0026
+00030:  MOVLW  97
+00032:  MOVWF  00
+00034:  DECFSZ 00,F
+00036:  BRA    0034
+00038:  DECFSZ FEF,F
+0003A:  BRA    0022
+0003C:  RETLW  00
+.................... #use rs232(baud = 9600,xmit=PIN_C6,rcv=PIN_C7) 
+.................... /* 
+.................... PORT A 
+.................... #define LCD_D0 PIN_A0 
+.................... #define LCD_D1 PIN_A1 
+.................... #define LCD_D2 PIN_A2 
+.................... #define LCD_D3 PIN_A3 
+.................... #define LCD_D4 PIN_A4 
+.................... #define LCD_D5 PIN_A5 
+.................... #define LCD_D6 PIN_A6 
+.................... #define LCD_D7 PIN_A7 
+.................... */ 
+....................  
+.................... #define LCD_RST PIN_C0 
+.................... #define LCD_CS PIN_C1 
+.................... #define LCD_RS PIN_C2 
+.................... #define LCD_WR PIN_C3 
+.................... #define LCD_RD PIN_C4 
+....................  
+....................  
+.................... void mkhigh(){ 
+.................... output_high(LCD_CS); 
+*
+00004:  BCF    F94.1
+00006:  BSF    F8B.1
+.................... output_high(LCD_RS); 
+00008:  BCF    F94.2
+0000A:  BSF    F8B.2
+.................... output_high(LCD_RD); 
+0000C:  BCF    F94.4
+0000E:  BSF    F8B.4
+.................... output_high(LCD_WR); 
+00010:  BCF    F94.3
+00012:  BSF    F8B.3
+.................... } 
+00014:  GOTO   015A (RETURN)
+.................... void write_addr(int8 x){ 
+.................... output_low(LCD_CS); 
+*
+0003E:  BCF    F94.1
+00040:  BCF    F8B.1
+.................... output_low(LCD_RS); 
+00042:  BCF    F94.2
+00044:  BCF    F8B.2
+.................... output_high(LCD_RD); 
+00046:  BCF    F94.4
+00048:  BSF    F8B.4
+.................... output_high(LCD_WR); 
+0004A:  BCF    F94.3
+0004C:  BSF    F8B.3
+.................... output_a(0x00); 
+0004E:  CLRF   F92
+00050:  CLRF   F89
+.................... output_low(LCD_WR); 
+00052:  BCF    F94.3
+00054:  BCF    F8B.3
+.................... delay_us(10); 
+00056:  MOVLW  06
+00058:  MOVWF  00
+0005A:  DECFSZ 00,F
+0005C:  BRA    005A
+0005E:  NOP   
+.................... output_high(LCD_WR); 
+00060:  BCF    F94.3
+00062:  BSF    F8B.3
+.................... output_a(x); 
+00064:  CLRF   F92
+00066:  MOVFF  07,F89
+.................... output_low(LCD_WR); 
+0006A:  BCF    F94.3
+0006C:  BCF    F8B.3
+.................... delay_us(10); 
+0006E:  MOVLW  06
+00070:  MOVWF  00
+00072:  DECFSZ 00,F
+00074:  BRA    0072
+00076:  NOP   
+.................... output_high(LCD_WR); 
+00078:  BCF    F94.3
+0007A:  BSF    F8B.3
+.................... output_high(LCD_RS); 
+0007C:  BCF    F94.2
+0007E:  BSF    F8B.2
+.................... } 
+00080:  GOTO   017A (RETURN)
+.................... int16 reg_read(){ 
+.................... int16 value; 
+.................... int16 value1; 
+.................... int16 fvalue; 
+.................... output_low(LCD_CS); 
+00084:  BCF    F94.1
+00086:  BCF    F8B.1
+.................... output_high(LCD_RS); 
+00088:  BCF    F94.2
+0008A:  BSF    F8B.2
+.................... output_high(LCD_RD); 
+0008C:  BCF    F94.4
+0008E:  BSF    F8B.4
+.................... output_high(LCD_WR); 
+00090:  BCF    F94.3
+00092:  BSF    F8B.3
+.................... output_low(LCD_RD); 
+00094:  BCF    F94.4
+00096:  BCF    F8B.4
+.................... delay_us(10); 
+00098:  MOVLW  06
+0009A:  MOVWF  00
+0009C:  DECFSZ 00,F
+0009E:  BRA    009C
+000A0:  NOP   
+.................... value = input_a()<<8; 
+000A2:  MOVLW  FF
+000A4:  MOVWF  F92
+000A6:  MOVFF  F80,08
+000AA:  CLRF   07
+.................... output_high(LCD_RD); 
+000AC:  BCF    F94.4
+000AE:  BSF    F8B.4
+.................... delay_us(10); 
+000B0:  MOVLW  06
+000B2:  MOVWF  00
+000B4:  DECFSZ 00,F
+000B6:  BRA    00B4
+000B8:  NOP   
+....................  
+.................... output_low(LCD_RD); 
+000BA:  BCF    F94.4
+000BC:  BCF    F8B.4
+.................... delay_us(10); 
+000BE:  MOVLW  06
+000C0:  MOVWF  00
+000C2:  DECFSZ 00,F
+000C4:  BRA    00C2
+000C6:  NOP   
+....................  
+.................... value |= input_a(); 
+000C8:  MOVLW  FF
+000CA:  MOVWF  F92
+000CC:  MOVF   F80,W
+000CE:  IORWF  07,F
+....................  
+.................... output_high(LCD_RD); 
+000D0:  BCF    F94.4
+000D2:  BSF    F8B.4
+.................... output_high(LCD_CS); 
+000D4:  BCF    F94.1
+000D6:  BSF    F8B.1
+....................  
+.................... return value; 
+000D8:  MOVFF  07,01
+000DC:  MOVFF  08,02
+....................  
+.................... } 
+000E0:  GOTO   017C (RETURN)
+.................... void writereg(int8 addr ,int16 data){ 
+.................... write_addr(addr); 
+.................... output_low(LCD_CS); 
+.................... output_high(LCD_RS); 
+.................... output_high(LCD_RD); 
+.................... output_high(LCD_WR); 
+.................... output_a(make8(data,1)); 
+.................... output_low(LCD_WR); 
+.................... delay_us(10); 
+.................... output_high(LCD_WR); 
+.................... output_a(make8(data,0)); 
+.................... output_low(LCD_WR); 
+.................... delay_us(10); 
+.................... output_high(LCD_WR); 
+.................... output_high(LCD_CS); 
+.................... } 
+.................... void main(){ 
+*
+00126:  CLRF   FF8
+00128:  BCF    FD0.7
+0012A:  CLRF   FEA
+0012C:  CLRF   FE9
+0012E:  MOVLW  60
+00130:  MOVWF  FD3
+00132:  MOVF   FD3,W
+00134:  BCF    FB8.3
+00136:  MOVLW  0C
+00138:  MOVWF  FAF
+0013A:  MOVLW  A2
+0013C:  MOVWF  FAC
+0013E:  MOVLW  90
+00140:  MOVWF  FAB
+00142:  MOVLW  00
+00144:  MOVWF  F7E
+00146:  BCF    FC1.4
+00148:  BCF    FC1.5
+0014A:  MOVF   F7F,W
+0014C:  ANDLW  E0
+0014E:  MOVWF  F7F
+00150:  BCF    F79.5
+00152:  BCF    F79.4
+00154:  CLRF   F7A
+00156:  CLRF   F7B
+.................... int16 value; 
+.................... mkhigh(); 
+00158:  BRA    0004
+.................... output_low(LCD_RST); 
+0015A:  BCF    F94.0
+0015C:  BCF    F8B.0
+.................... delay_ms(2); 
+0015E:  MOVLW  02
+00160:  MOVWF  08
+00162:  RCALL  0018
+.................... output_high(LCD_RST); 
+00164:  BCF    F94.0
+00166:  BSF    F8B.0
+.................... delay_ms(500); 
+00168:  MOVLW  02
+0016A:  MOVWF  07
+0016C:  MOVLW  FA
+0016E:  MOVWF  08
+00170:  RCALL  0018
+00172:  DECFSZ 07,F
+00174:  BRA    016C
+.................... write_addr(0); 
+00176:  CLRF   07
+00178:  BRA    003E
+.................... value = reg_read(); 
+0017A:  BRA    0084
+0017C:  MOVFF  02,06
+00180:  MOVFF  01,05
+.................... while(1){ 
+.................... printf("%Lx\n",value); 
+00184:  MOVFF  06,07
+00188:  MOVLW  57
+0018A:  MOVWF  08
+0018C:  RCALL  00E4
+0018E:  MOVFF  05,07
+00192:  MOVLW  57
+00194:  MOVWF  08
+00196:  RCALL  00E4
+00198:  MOVLW  0A
+0019A:  BTFSS  F9E.4
+0019C:  BRA    019A
+0019E:  MOVWF  FAD
+.................... delay_ms(1000); 
+001A0:  MOVLW  04
+001A2:  MOVWF  07
+001A4:  MOVLW  FA
+001A6:  MOVWF  08
+001A8:  RCALL  0018
+001AA:  DECFSZ 07,F
+001AC:  BRA    01A4
+.................... } 
+001AE:  BRA    0184
+.................... } 
+001B0:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C800   INTRC_IO FCMEN IESO
+   Word  2: 1E1F   NOPUT BROWNOUT BORV20 NOWDT WDT32768
+   Word  3: 8F00   CCP2C1 PBADEN LPT1OSC NODELAYINTOSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
