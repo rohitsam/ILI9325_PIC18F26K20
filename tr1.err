@@ -1,5 +1,0 @@
->>> Warning 203 "tr1.c" Line 95(1,1): Condition always TRUE
->>> Warning 202 "tr1.c" Line 47(7,13): Variable never used:   value1
->>> Warning 202 "tr1.c" Line 48(7,13): Variable never used:   fvalue
-      Memory usage:   ROM=1%      RAM=0% - 0%
-      0 Errors,  3 Warnings.
