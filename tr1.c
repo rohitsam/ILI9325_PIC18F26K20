@@ -19,7 +19,7 @@ PORT A
 #define LCD_RS PIN_C2
 #define LCD_WR PIN_C3
 #define LCD_RD PIN_C4
-
++
 
 void mkhigh(){
 output_high(LCD_CS);
@@ -83,13 +83,19 @@ delay_us(10);
 output_high(LCD_WR);
 output_high(LCD_CS);
 }
-void main(){
-int16 value;
-mkhigh();
+void lcd_rst(){
+
 output_low(LCD_RST);
 delay_ms(2);
 output_high(LCD_RST);
 delay_ms(500);
+
+}
+void main(){
+int16 value;
+mkhigh();
+lcd_rst();
+writereg()
 write_addr(0);
 value = reg_read();
 while(1){
