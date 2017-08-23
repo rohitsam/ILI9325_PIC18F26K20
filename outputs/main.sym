@@ -1,0 +1,159 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 strtok.save
+006-009 _Randseed
+00A.0   rcolor
+00B-010 MAIN.hello
+011-016 MAIN.world
+017-018 fill.color
+017     reset.i
+017     MAIN.@SCRATCH1
+018-019 printword.word
+018     @delay_ms1.P1
+019-01C fill.i
+01A-01B printword.x
+01C-01D printword.y
+01E-01F printword.line
+020     printword.i
+021     printword.size
+022-023 printchar1.x
+022-023 strlen.s
+022     printword.@SCRATCH1
+023     printword.@SCRATCH2
+024-025 strlen.sc
+024-025 @MUL1616.P1
+024-025 printchar1.y
+026-027 @MUL1616.P1
+026-027 printchar1.line
+026     strlen.@SCRATCH1
+028-029 printchar1.h
+028     @MUL1616.@SCRATCH1
+02A-02B printchar1.w
+02C-02D printchar1.color
+02E-031 printchar1.temp
+032-035 printchar1.ref
+036     printchar1.fwidth
+037     printchar1.fheight
+038-03B @MUL3232.P1
+038     rand.@SCRATCH1
+038     printchar1.@SCRATCH1
+039     rand.@SCRATCH2
+039     printchar1.@SCRATCH2
+03A     rand.@SCRATCH3
+03A     printchar1.@SCRATCH3
+03B-03C @DIV1616.P1
+03B     rand.@SCRATCH4
+03B     printchar1.@SCRATCH4
+03C-03D drawpixel.x
+03C-03F @MUL3232.P1
+03C     printchar1.@SCRATCH5
+03D-03E @DIV1616.P1
+03D     printchar1.@SCRATCH6
+03E-03F drawpixel.y
+03E     printchar1.@SCRATCH7
+03F     @DIV1616.@SCRATCH1
+03F     printchar1.@SCRATCH8
+040-041 drawpixel.color
+040     @MUL3232.@SCRATCH1
+040     printchar1.@SCRATCH9
+041     @MUL3232.@SCRATCH2
+041     printchar1.@SCRATCH10
+042     writereg.addr
+042-043 writegram.data
+042     @MUL3232.@SCRATCH3
+042     printchar1.@SCRATCH11
+043-044 writereg.data
+043     @MUL3232.@SCRATCH4
+043     printchar1.@SCRATCH12
+044-045 @READ_PROGRAM_MEMORY.P1
+044     writegram.lo
+044     @MUL3232.@SCRATCH5
+045     writegram.hi
+045     write_addr.x
+045     @MUL3232.@SCRATCH6
+045     writereg.@SCRATCH1
+F7A.6   C2OUT
+F7B.6   C1OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0492  @READ_PROGRAM_MEMORY
+0004  @delay_ms1
+0440  strlen
+030C  @MUL3232
+04F4  rand
+04B0  @DIV1616
+002A  write_addr
+0360  writegram
+00AA  writereg
+006E  reset
+00F6  lcd_init
+039A  fill
+0560  drawpixel
+05A0  printchar1
+0746  printword
+0474  @MUL1616
+0810  MAIN
+0810  @cinit
+0136  StrtoulGO
+0136  StrtolGO
+
+
+User Memory space: 
+ 00F91E-00FCBF  ahoy_buff
+ 00E9EE-00F91D  ffonts
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Rohit\Music\ahoysysprog\pic26k20_tft_lcd\ili9325_pic18F26K20\
+
+Project Files:
+    main.c
+    D:\PICC\devices\18F26K20.h
+    library\library.h
+    library\register.h
+    library\bangothic16x16.h
+    D:\PICC\drivers\stdlib.h
+    D:\PICC\drivers\stddef.h
+    D:\PICC\drivers\string.h
+    D:\PICC\drivers\ctype.h
+
+Units:
+    C:\Users\Rohit\Music\ahoysysprog\pic26k20_tft_lcd\ili9325_pic18F26K20\main (main)
+
+Compiler Settings:
+    Processor:      PIC18F26K20
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.sta

@@ -1,0 +1,4 @@
+>>> Warning 225 "C:\Users\Rohit\Music\ahoysysprog\pic26k20_tft_lcd\ili9325_pic18F26K20\library\library.h" Line 7(17,23): Duplicate #define
+>>> Warning 202 "C:\Users\Rohit\Music\ahoysysprog\pic26k20_tft_lcd\ili9325_pic18F26K20\library\library.h" Line 230(16,21): Variable never used:   color
+      Memory usage:   ROM=11%      RAM=0% - 2%
+      0 Errors,  2 Warnings.

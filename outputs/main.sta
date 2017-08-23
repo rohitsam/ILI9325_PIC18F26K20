@@ -1,0 +1,66 @@
+
+ROM used: 7064 (11%)
+          64704 (100%) including unused fragments
+
+          2 Average locations per line
+          10 Average locations per statement
+
+RAM used: 12 (0%) at main() level
+          70 (2%) worst case
+
+Stack used: 5 worst case (out of 30 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   20     6   1  main.c
+  435     0   0  D:\PICC\devices\18F26K20.h
+  381   210  30  library\library.h
+   62     0   0  library\register.h
+ 1223     0   0  library\bangothic16x16.h
+ 1273   359  52  D:\PICC\drivers\stdlib.h
+   28     0   0  D:\PICC\drivers\stddef.h
+  409   121  17  D:\PICC\drivers\string.h
+   28     0   0  D:\PICC\drivers\ctype.h
+----- -----
+ 3859   696 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     30   0   7             @READ_PROGRAM_MEMORY
+0     38   0   1             @delay_ms1
+0     52   0   5   129  4.6  strlen
+0     84   1  14             @MUL3232
+0    108   1   4   101  3.8  rand
+0     68   0   5             @DIV1616
+0     68   0   1   282  1.4  write_addr
+0     58   0   4   259  2.8  writegram
+0     76   1   4   383  1.9  writereg
+0     60   0   1   313  3.3  reset
+0    534   4   0  2079  2.0  lcd_init
+0    166   1   6   315  3.7  fill
+0     64   0   6   231  2.0  drawpixel
+0    422   3  34   837  6.8  printchar1
+0    202   1  12   614  7.5  printword
+0     30   0   5             @MUL1616
+0    182   1   1   197  2.7  MAIN
+
+Program metrics:
+    Functions               12
+    Statements              696
+    Comments                2088
+    Volume (V)              8846
+    Difficilty (D)          42.5
+    Effort to implement (E) 376330
+    Time to implement (T)   5 hours, 48 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   8
+    Maintainability (MI)    121
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-0E9EC  2242  57640  
+0E9EE-0FCBE  4818  0  
+
+
+
